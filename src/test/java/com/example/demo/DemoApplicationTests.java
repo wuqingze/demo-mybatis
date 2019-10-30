@@ -45,7 +45,7 @@ class DemoApplicationTests {
 		Random r = new Random();
 		CDCRatingReportDownloadService = Executors.newFixedThreadPool(5);
 
-		for(int i=0;i<1000;i++){
+		for(int i=0;i<1;i++){
 			CDCRatingReportDownloadService.submit(new Callable<Integer>() {
 				@Override
 				public Integer call() throws Exception {
