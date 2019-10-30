@@ -24,12 +24,10 @@ spring:
     host: 127.0.0.1
     port: 6379
     timeout: 3
-#    password: 111111
-    pool:
-      minIdle: 1
-      maxIdle: 10
-      maxWait: 3
-      maxActive: 8
+
+  aop:
+    auto: true
+    proxy-target-class: false
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.example.entity

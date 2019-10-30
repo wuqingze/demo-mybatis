@@ -4,10 +4,7 @@ import com.example.demo.entity.People;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,7 +34,8 @@ public class RedisController {
     }
 
     @RequestMapping(value = "/redis/insertPeopleList", method = RequestMethod.POST)
-    public void insertPeopleList(@ModelAttribute List<People> peopleList){
-        redisTemplate.opsForValue().set("peopleList", "");
+    public void insertPeopleList(@RequestBody List<People> peopleList){
+        log.info(peopleList.toString());
+        redisTemplate.opsForValue().set("peopleList", peopleList);
     }
 }
