@@ -108,4 +108,16 @@ class RedisApplicationTests {
         redisTemplate.opsForValue().set("peopleList", peopleList);
         log.info("=====end insert");
     }
+
+    /**
+     * list追加数据
+     */
+    @Test
+    public void addRedisObjet(){
+        List<People> peopleList = new LinkedList<People>(){};
+        peopleList.add(new People(100000, "wuqingze", 22, "男"));
+        redisTemplate.opsForList().rightPush("peopleList", peopleList);
+//        redisTemplate.opsForValue().set("people"+people.getId(), people);
+
+    }
 }

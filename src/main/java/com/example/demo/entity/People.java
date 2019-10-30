@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
-public class People {
+import java.io.Serializable;
+
+public class People implements Serializable {
     private Integer id;
 
     private String name;
@@ -8,6 +10,14 @@ public class People {
     private Integer age;
 
     private String gender;
+
+    public People(){}
+    public People(Integer id, String name, Integer age, String gender) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
 
     public Integer getId() {
         return id;
