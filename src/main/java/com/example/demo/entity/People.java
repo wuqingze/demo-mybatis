@@ -40,4 +40,14 @@ public class People {
     public void setGender(String gender) {
         this.gender = gender == null ? null : gender.trim();
     }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
 }
