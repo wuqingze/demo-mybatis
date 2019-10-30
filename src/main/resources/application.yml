@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    username: nong
+    password: 000---pppPPP
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hello?characterEncoding=utf-8
+    type: com.alibaba.druid.pool.DruidDataSource  #这个可以看一下 https://blog.csdn.net/qq_27191423/article/details/79146855
+    filters: stat
+    maxActive: 20　　#连接池的最大值，同一时间可以从池分配的最多连接数量，0时无限制
+    initialSize: 1　　#连接初始值，连接池启动时创建的连接数量的初始值
+    maxWait: 60000
+    minIdle: 1　　#最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true 　　#是否对已备语句进行池管理（布尔值），是否对PreparedStatement进行缓存
+    maxOpenPreparedStatements: 20
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.example.entity
