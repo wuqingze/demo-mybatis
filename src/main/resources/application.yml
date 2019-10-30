@@ -19,6 +19,17 @@ spring:
     poolPreparedStatements: true 　　#是否对已备语句进行池管理（布尔值），是否对PreparedStatement进行缓存
     maxOpenPreparedStatements: 20
 
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3
+#    password: 111111
+    pool:
+      minIdle: 1
+      maxIdle: 10
+      maxWait: 3
+      maxActive: 8
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.example.entity
